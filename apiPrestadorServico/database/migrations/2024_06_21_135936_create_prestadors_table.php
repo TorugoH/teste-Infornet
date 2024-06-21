@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('logradouro');
             $table->string('bairro');
             $table->integer('numero');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->decimal('latitude');
+            $table->decimal('longitude');
             $table->string('cidade');
             $table->string('UF');
             $table->string('situacao');
