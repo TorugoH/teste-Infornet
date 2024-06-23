@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ObterJWTController;
+
+Route::post('/obeterToken',[ObterJWTController::class,'obeterToken']);
+
 //use App\Http\Controllers\ServicoController;
 /*
 |--------------------------------------------------------------------------

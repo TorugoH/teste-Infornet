@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Providers;
-
+use App\Providers\CustomEloquentUserProvider;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -26,5 +27,17 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        Auth::provider('custom-eloquent', function ($app, array $config) {
+            return new CustomEloquentUserProvider($app['hash'], $config['model']);
+        });
     }
 }
