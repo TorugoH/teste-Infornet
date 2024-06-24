@@ -3,7 +3,7 @@
 namespace App\Service;
 use GuzzleHttp\Client;
 
-class ApiGeolocalizaoService{
+class GerenciadorApiExternaService{
     protected $client;
     protected $url;
     protected $usuario;
@@ -11,15 +11,14 @@ class ApiGeolocalizaoService{
 
     public function __construct(Client $client){
         $this->client = $client;
-        $this->url= 'https://teste-infornet.000webhostapp.com/api/endereco/geocode/';
         $this->usuario=env('API_USERNAME');
         $this->senha=env('API_PASSWORD') ;
     }
 
-    public function getLatitudeLongitude($endereco){
-        $urlGeolocalizacao = $this->url.urlencode($endereco);
+    public function get($url){
+        
         try{
-            $response =$this->client->request('GET',$urlGeolocalizacao,[
+            $response =$this->client->request('GET',$url,[
                 'auth'=>[
                     $this->usuario,
                     $this->senha,

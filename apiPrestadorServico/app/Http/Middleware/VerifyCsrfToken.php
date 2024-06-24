@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        "http://localhost:8000/obeterToken",
+        "http://localhost:8000/autenticacao",
+        "http://localhost:8000/buscarPrestador",
     ];
 }
