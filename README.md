@@ -6,7 +6,7 @@ Projeto para um teste pratico de desenvolvedor full stack PHP
 
 ## Documentação
 
-[Documentação da API](https://documenter.getpostman.com/view/31904190/2sA3XWbdFV)
+[Documentação da API - POSTMAN](https://documenter.getpostman.com/view/31904190/2sA3XWbdFV)
 
 
 ## Rodando localmente
